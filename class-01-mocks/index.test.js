@@ -15,14 +15,6 @@ const { rejects, deepStrictEqual } = require("assert");
     await rejects(result, rejection);
   }
   {
-    /*
-        UPDATE: 22/03/2022
-        Se você estiver executando esse código após o ano de 2020. 
-        O calculo para saber o ano de nascimento da pessoa vai ser diferente do esperado.
-        
-        Nas próximas aulas você vai entender como resolver este problema usando fakeTimers. 
-        Mas por agora, adicionei o código abaixo para mockar o Date.
-        */
     Date.prototype.getFullYear = () => 2020;
     const filePath = "./mocks/threeItems-valid.csv";
     const result = await File.csvToJson(filePath);
