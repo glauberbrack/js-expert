@@ -1,0 +1,2 @@
+We can use **stubs** to replace some behaviors of the system with static data. We need to think in cases where our tests do not depend of external services or internet connection. 
+We need to focus on testing the logic and not the calling of services. We need to assume that the third part systems works as expected
