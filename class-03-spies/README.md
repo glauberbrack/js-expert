@@ -1,0 +1,2 @@
+Cenário onde os testes unitarios passam, api em loop. Devemos observar, também, o comportamento das funções
+eles observam as funçoes vendo a quantidade de vezes que elas foram chamadas, quais os parametros e quais resultados foram retornados
