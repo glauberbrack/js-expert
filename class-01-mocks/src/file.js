@@ -19,6 +19,7 @@ class File {
   static async getFileContent(filePath) {
     return (await readFile(filePath)).toString("utf8");
   }
+
   static isValid(csvString, options = DEFAULT_OPTION) {
     const [header, ...fileWithoutHeader] = csvString.split(/\r?\n/);
     const isHeaderValid = header === options.fields.join(",");
@@ -41,6 +42,7 @@ class File {
 
     return { valid: true };
   }
+
   static parseCSVToJSON(csvString) {
     const lines = csvString.split("\n");
     // remove o primeiro item e joga na variavel
