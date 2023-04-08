@@ -21,8 +21,12 @@ const file = new File()
 // to avoig get the 'this' form the function
 // watch(__filename, (event, filename) => file.watch(event, filename))
 // kind of ugly, uhn?
+
+// we could make the context explicit 
+// the 'bind' return one function with 'this', ignoring the 'watch'
 watch(__filename, file.watch.bind(file))
 
-// a diferenca entre um e outro, é que um vc passa os argumentos como array e outro uma lista de argumentos
+// the difference between them is:
+// in the first you will pass the arguments as an array and in the other as a list of arguments
 file.watch.call({ showContent: () => console.log('call: hey sinon!') }, null, __filename )
 file.watch.apply({ showContent: () => console.log('apply: hey sinon!') }, [null, __filename] )
